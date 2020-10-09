@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "DateApplied";
+    var msg = TempData["AlertMessage"] ?? string.Empty;
+}
+<script>
+    var msg ='@msg';
+    if (msg)
+        alert(msg);
+
+</script>
+<h2 style="color:black">Your application has been submitted.</h2>
+<hr />
+<h3 style="color:black">You will be notified via email on confirmation.</h3>
+

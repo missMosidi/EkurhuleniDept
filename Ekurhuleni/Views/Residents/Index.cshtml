@@ -1,0 +1,159 @@
+﻿@model IEnumerable<Ekurhuleni.Models.Residents>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UserType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.meterType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerProfile.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerProfile.FName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerProfile.LName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerProfile.IDNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerProfile.Cell_Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerProfile.Work_Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerProfile.Gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerProfile.Block_Complex_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerProfile.Street_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerProfile.Suburb)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerProfile.Postal_Code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.voltage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.circuit)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.resTarrif)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AppStatus)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.UserType)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.meterType)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CustomerProfile.Title)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CustomerProfile.FName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CustomerProfile.LName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.IdType)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CustomerProfile.IDNumber)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CustomerProfile.Cell_Phone)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CustomerProfile.Work_Phone)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CustomerProfile.Gender)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.email)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CustomerProfile.Block_Complex_Name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CustomerProfile.Street_Name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CustomerProfile.Suburb)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CustomerProfile.Postal_Code)
+    </td>
+    @*<td>
+        @Html.DisplayFor(modelItem => item.suburb)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.code)
+    </td>*@
+    <td>
+        @Html.DisplayFor(modelItem => item.vat)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.voltage)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.circuit)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.resTarrif)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.AppStatus)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+        @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+    </td>
+</tr>
+}
+
+</table>

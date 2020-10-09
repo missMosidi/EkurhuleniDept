@@ -1,0 +1,99 @@
+﻿@model IEnumerable<Ekurhuleni.Models.Contractor>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.initials)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.surname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.businessName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.contactPerson)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.officeNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cellNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IDNumberType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IDNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.faxNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.initials)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.surname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.businessName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.contactPerson)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.officeNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cellNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDNumberType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.faxNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.email)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.contractorID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.contractorID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.contractorID })
+        </td>
+    </tr>
+}
+
+</table>

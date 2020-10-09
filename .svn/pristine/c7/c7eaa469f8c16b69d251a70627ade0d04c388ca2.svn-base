@@ -1,0 +1,182 @@
+﻿@model Ekurhuleni.Models.Residents
+
+@{
+    ViewBag.Title = "ConfirmForUser";
+}
+
+<h2>Confirm For User</h2>
+
+<div>
+    @*<h4>Customer</h4>
+        <hr />*@
+    <h2 style="color:lightgreen">@ViewBag.Search</h2>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UserType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.meterType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.meterType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerProfile.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerProfile.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerProfile.FName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerProfile.FName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerProfile.LName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerProfile.LName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IdType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerProfile.IDNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerProfile.IDNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerProfile.Cell_Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerProfile.Cell_Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerProfile.Gender)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerProfile.Gender)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerProfile.Work_Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerProfile.Work_Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerProfile.Block_Complex_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerProfile.Block_Complex_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerProfile.Street_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerProfile.Street_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerProfile.Suburb)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerProfile.Suburb)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerProfile.Postal_Code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerProfile.Postal_Code)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.vat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.voltage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.voltage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.circuit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.circuit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.resTarrif)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.resTarrif)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AppStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AppStatus)
+        </dd>
+    </dl>
+</div>
+<p>
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |*@
+    @Html.ActionLink("Back to List", "Index")
+</p>

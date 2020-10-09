@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Ekurhuleni.Models.Tarrifs>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Btarrif)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ResTarrif)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Btarrif)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ResTarrif)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.tarrifID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.tarrifID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.tarrifID })
+        </td>
+    </tr>
+}
+
+</table>

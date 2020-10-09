@@ -1,0 +1,93 @@
+﻿@model IEnumerable<EkurhuleniEnergy.Models.MeterViewModel>
+<div class="container">
+    <div class="col-md-8">
+        <h3>Meter(s)</h3><br />
+        @Html.Hidden("id")
+        <table class="table">
+            
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ImageUrl)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Price)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Size)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Selected)
+                </th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+        <tr>
+            <td>
+                <img src="~/Images/@item.ImageUrl" style="width:60px;height:60px" alt="meter image" class="online" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @item.Price.ToString("c")
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Size)
+            </td>
+            <td>
+                @(item.Selected==true?"Added":"Not added")
+            </td>
+            <td>
+                @if (!item.Selected)
+                {
+                <a href="#" class="btn btn-success btn-sm" onclick="addItem('@item.Id,@item.CustomerId')"><span style="color:white!important"class="fa fa-plus"></span></a>
+                }
+                else
+                {
+                 <a href="#"class="btn btn-danger btn-sm" onclick="deleteItem('@item.Id ,@item.CustomerId')"><span style="color:white!important" class="fa fa-minus" ></span></a>
+                }
+            </td>
+        </tr>
+            }
+        </table>
+        <a class="btn btn-outline-dark" href="@(Url.Action("Summary",new { id = Model.FirstOrDefault().CustomerId }))">Continue &gt;&gt;</a>
+    </div>
+</div>
+<script>
+ function addItem(id) {
+        //alert(id);
+        $.ajax({
+            type: "Get",
+            url: "@Url.Action("AddMeter")?id=" + id,
+            //async:true,
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (data) {
+                location.reload();
+            },
+            error: function (e) {
+                return;
+            }
+        });
+    }
+    function deleteItem(id) {
+        $.ajax({
+            type: "Get",
+            url: "@Url.Action("RemoveMeter")?id=" + id,
+            //async: true,
+            contentType: "application/json; charset=utf-8",
+
+            dataType: "json",
+            success: function (data) {
+                location.reload();
+            },
+            error: function (e) {
+                return;
+            }
+        });
+    }
+</script>

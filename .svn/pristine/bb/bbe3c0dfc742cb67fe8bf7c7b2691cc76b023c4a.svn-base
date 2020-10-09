@@ -1,0 +1,121 @@
+﻿@model Ekurhuleni.Models.CustomerProfile
+
+@{
+    ViewBag.Title = "Create";
+}
+
+@*<h2>Profile</h2>*@
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <div class="panel-title">
+                Personal Details
+            </div>
+        </div>
+        <div class="panel-body">
+            <h4>Enter Personal Details</h4>
+            <hr />
+
+
+
+
+            <div class="row">
+                <div class="col-xs-6">
+
+
+                </div>
+
+
+            </div>
+
+           
+            <div class="row">
+                <div class="col-md-3">
+                    @Html.EnumDropDownListFor(model => model.TypeOfCustomer, new { htmlAttributes = new { @class = "form-control", @required = "required" } })
+                    @Html.ValidationMessageFor(model => model.TypeOfCustomer, "", new { @class = "text-danger" })
+                </div>
+                <div class="col-md-3">
+                    @Html.EnumDropDownListFor(model => model.Title, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="col-md-3">
+                    @Html.EditorFor(model => model.FName, new { htmlAttributes = new { @class = "form-control", @placeholder = "First Name", @required = "required" } })
+                    @Html.ValidationMessageFor(model => model.FName, "", new { @class = "text-danger" })
+                </div>
+                <div class="col-md-3">
+                    @Html.EditorFor(model => model.LName, new { htmlAttributes = new { @class = "form-control", @placeholder = "Last Name", @required = "required" } })
+                    @Html.ValidationMessageFor(model => model.LName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    @Html.EditorFor(model => model.IDNumber, new { htmlAttributes = new { @class = "form-control", @placeholder = "ID Number", @required = "required" } })
+                    @Html.ValidationMessageFor(model => model.IDNumber, "", new { @class = "text-danger" })
+                </div>
+                <div class="col-md-3">
+                    @Html.EnumDropDownListFor(model => model.Gender, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="col-md-3">
+                    @Html.EditorFor(model => model.Cell_Phone, new { htmlAttributes = new { @class = "form-control", @placeholder = "Cell Phone Number", @required = "required" } })
+                    @Html.ValidationMessageFor(model => model.Cell_Phone, "", new { @class = "text-danger" })
+                </div>
+                <div class="col-md-3">
+                    @Html.EditorFor(model => model.Work_Phone, new { htmlAttributes = new { @class = "form-control", @placeholder = "Work Number" } })
+                    @Html.ValidationMessageFor(model => model.Work_Phone, "", new { @class = "text-danger" })
+                </div>
+                <div class="col-md-3">
+                    @Html.EditorFor(model => model.ApplicationUser.Email, new { htmlAttributes = new { @class = "form-control",@placeholder = "email" } })
+                    @Html.ValidationMessageFor(model => model.ApplicationUser.Email, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    @Html.EditorFor(model => model.Unit_Number, new { htmlAttributes = new { @class = "form-control", @placeholder = "unit number" } })
+                    @Html.ValidationMessageFor(model => model.IDNumber, "", new { @class = "text-danger" })
+                </div>
+                <div class="col-md-3">
+                    @Html.EditorFor(model => model.Block_Complex_Name, new { htmlAttributes = new { @class = "form-control", @placeholder = "block/Complex name" } })
+                    @Html.ValidationMessageFor(model => model.Block_Complex_Name, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="col-md-3">
+                    @Html.EditorFor(model => model.Street_Name, new { htmlAttributes = new { @class = "form-control", @placeholder = "Street Name", @required = "required" } })
+                    @Html.ValidationMessageFor(model => model.Street_Name, "", new { @class = "text-danger" })
+                </div>
+                <div class="col-md-3">
+                    @Html.EditorFor(model => model.Suburb, new { htmlAttributes = new { @class = "form-control", @placeholder = "Suburb", @required = "required" } })
+                    @Html.ValidationMessageFor(model => model.Suburb, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    @Html.EditorFor(model => model.Postal_Code, new { htmlAttributes = new { @class = "form-control", @placeholder = "Postal Code" } })
+                    @Html.ValidationMessageFor(model => model.Postal_Code, "", new { @class = "text-danger" })
+                </div>
+            </div>
+ 
+
+            <hr />
+            <div class="navbar-left">
+                <div class="col-md-offset-2 col-md-10">
+                    <br />
+                    <input type="submit" value="Submit" class="btn btn-success" />
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+}
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }

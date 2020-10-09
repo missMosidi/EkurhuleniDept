@@ -1,0 +1,120 @@
+﻿@model Ekurhuleni.Models.Contractor
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Contractor</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.initials)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.initials)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.surname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.surname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.businessName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.businessName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.contactPerson)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.contactPerson)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.officeNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.officeNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cellNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cellNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IDNumberType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDNumberType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IDNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.faxNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.faxNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

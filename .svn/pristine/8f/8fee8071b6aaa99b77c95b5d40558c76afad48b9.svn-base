@@ -1,0 +1,131 @@
+﻿@model Ekurhuleni.Models.Contractor
+
+@{
+    ViewBag.Title = "Create";
+}
+<style>
+    #alignform label {
+        width: 300px;
+    }
+</style>
+<h2>Contractor</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="row">
+    <div class="col-md-3">
+        <div class="form-group">
+            @Html.LabelFor(model => model.title, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.EnumDropDownListFor(model => model.title, htmlAttributes: new { @class = "form-control", @style = "width:250px" })
+            @Html.ValidationMessageFor(model => model.title, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="form-group">
+            @Html.LabelFor(model => model.initials, htmlAttributes: new { @class = "control-label col-md-12" })
+            @Html.EditorFor(model => model.initials, new { htmlAttributes = new { @class = "form-control", @style = "width:250px" } })
+            @Html.ValidationMessageFor(model => model.initials, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="form-group">
+            @Html.LabelFor(model => model.name, htmlAttributes: new { @class = "control-label col-md-12" })
+            @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control", @style = "width:250px" } })
+            @Html.ValidationMessageFor(model => model.name, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="form-group">
+            @Html.LabelFor(model => model.officeNumber, htmlAttributes: new { @class = "control-label col-md-12" })
+            @Html.EditorFor(model => model.officeNumber, new { htmlAttributes = new { @class = "form-control", @style = "width:250px" } })
+            @Html.ValidationMessageFor(model => model.officeNumber, "", new { @class = "text-danger" })
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-3">
+        <div class="form-group">
+            @Html.LabelFor(model => model.surname, htmlAttributes: new { @class = "control-label col-md-12" })
+            @Html.EditorFor(model => model.surname, new { htmlAttributes = new { @class = "form-control", @style = "width:250px" } })
+            @Html.ValidationMessageFor(model => model.surname, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="form-group">
+            @Html.LabelFor(model => model.cellNumber, htmlAttributes: new { @class = "control-label col-md-12" })
+            @Html.EditorFor(model => model.cellNumber, new { htmlAttributes = new { @class = "form-control", @style = "width:250px" } })
+            @Html.ValidationMessageFor(model => model.cellNumber, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="form-group">
+            @Html.LabelFor(model => model.IDNumberType, htmlAttributes: new { @class = "control-label col-md-12" })
+            @Html.EnumDropDownListFor(model => model.IDNumberType, htmlAttributes: new { @class = "form-control", @style = "width:250px" })
+            @Html.ValidationMessageFor(model => model.IDNumberType, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="form-group">
+            @Html.LabelFor(model => model.IDNumber, htmlAttributes: new { @class = "control-label col-md-12" })
+            @Html.EditorFor(model => model.IDNumber, new { htmlAttributes = new { @class = "form-control", @style = "width:250px" } })
+            @Html.ValidationMessageFor(model => model.IDNumber, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    </div>
+<div class="row">
+    <div class="col-md-3">
+        <div class="form-group">
+            @Html.LabelFor(model => model.businessName, htmlAttributes: new { @class = "control-label col-md-12" })
+            @Html.EditorFor(model => model.businessName, new { htmlAttributes = new { @class = "form-control", @style = "width:250px" } })
+            @Html.ValidationMessageFor(model => model.businessName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="form-group">
+            @Html.LabelFor(model => model.faxNumber, htmlAttributes: new { @class = "control-label col-md-12" })
+            @Html.EditorFor(model => model.faxNumber, new { htmlAttributes = new { @class = "form-control", @style = "width:250px" } })
+            @Html.ValidationMessageFor(model => model.faxNumber, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="form-group">
+            @Html.LabelFor(model => model.contactPerson, htmlAttributes: new { @class = "control-label col-md-12" })
+            @Html.EditorFor(model => model.contactPerson, new { htmlAttributes = new { @class = "form-control", @style = "width:250px" } })
+            @Html.ValidationMessageFor(model => model.contactPerson, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="form-group">
+            @Html.LabelFor(model => model.email, htmlAttributes: new { @class = "control-label col-md-12" })
+            @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control", @style = "width:250px" } })
+            @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="form-group">
+                @Html.LabelFor(model => model.RegNo, htmlAttributes: new { @class = "control-label col-md-12" })
+                @Html.EditorFor(model => model.RegNo, new { htmlAttributes = new { @class = "form-control", @style = "width:250px" } })
+                @Html.ValidationMessageFor(model => model.RegNo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+   
+    <div class="col-md-4">
+        <div class="form-group">
+            <button type="submit" class="btn btn-default" style="margin-top: 25px;">Add</button>
+        </div>
+    </div>
+    }
+
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }

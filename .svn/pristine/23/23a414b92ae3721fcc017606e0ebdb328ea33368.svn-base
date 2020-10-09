@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Ekurhuleni.Models.Residents>
+
+@{
+    ViewBag.Title = "ViewStatus";
+}
+<h2>Application</h2>
+<h2>Status List</h2>
+
+@{ 
+    foreach (var item in Model)
+    {
+        <div>
+            <h5 style="color:black">Application</h5>
+            <dl class="dl-horizontal">
+                @*<dt>
+                    Application Number:
+                </dt>
+                <dd>
+                    @item.ApplicationNumber
+                </dd>*@
+                <dt>
+                    ID Number:
+                </dt>
+                <dd>
+                    @item.CustomerProfile.IDNumber
+                </dd>
+                <dt>
+                    Status:
+                </dt>
+                <dd>
+                    @if (item.AppStatus == "Approved")
+                    {
+                        <h5 style="color:green">@item.AppStatus</h5>
+                    }
+                    @if (item.AppStatus == "Declined")
+                    {
+                        <h5 style="color:red">@item.AppStatus</h5>
+                    }
+                    @if (item.AppStatus == "Pending")
+                    {
+                        <h5 style="color:yellow">@item.AppStatus</h5>
+                    }
+                </dd>
+
+            </dl>
+        </div>
+    }
+}
